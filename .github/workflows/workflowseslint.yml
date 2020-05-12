@@ -9,6 +9,8 @@ on:
 
 jobs:
     build:
+      env:
+        working-directory: /github/workspace/
 
       runs-on: ubuntu-latest
 
@@ -23,7 +25,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       -  run: npm init -y
-      -  run: npm install eslint --save-dev 
+         working-directory: ${{ env.working-directory }} 
+      -  run: npm install eslint --save-dev
+         working-directory: ${{ env.working-directory }} 
     
     eslint:
       runs-on: ubuntu-latest
