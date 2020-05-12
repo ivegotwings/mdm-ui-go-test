@@ -11,6 +11,8 @@ jobs:
     build:
 
       runs-on: ubuntu-latest
+      env: 
+        working-directory: ../../
 
       strategy:
         matrix:
@@ -22,7 +24,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
+      - working-directory: ${{ env.working-directory }}
+        run: npm install
+    
     eslint:
       runs-on: ubuntu-latest
       steps:
@@ -30,5 +34,6 @@ jobs:
         - uses: stefanoeb/eslint-action@1.0.2
           with:
             repo-token: ${{ secrets.GITHUB_TOKEN }}
+            files: ../../src/
           env:
             CI: true
