@@ -7,26 +7,13 @@ on:
     branches: [ dev ]
     types: [assigned, opened, synchronize, reopened]
 
-jobs:
-    build:
-      runs-on: ubuntu-latest
-      env:
-        working-directory: $GITHUB_WORKSPACE
-
-      strategy:
-        matrix:
-          node-version: [10.x]
-
-      steps:
-      - uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: eslint action
-      - uses: stefanoeb/eslint-action@1.0.2
-        with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          files: /src
-        env:
-          CI: true
+jobs:     
+  eslint:
+    runs-on: ubuntu
+    steps:
+    - name: eslint
+    - uses: actions/checkout@v1
+    - uses: stefanoeb/eslint-action@1.0.2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        files: /src
