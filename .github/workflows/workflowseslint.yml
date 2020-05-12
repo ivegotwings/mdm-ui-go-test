@@ -10,7 +10,7 @@ on:
 jobs:
     build:
       env:
-        working-directory: ./
+        working-directory: /github/workspace/
 
       runs-on: ubuntu-latest
 
