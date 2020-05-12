@@ -23,8 +23,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: eslint install
-      - run: npm install eslint
       - name: eslint action
       - uses: stefanoeb/eslint-action@1.0.2
         with:
