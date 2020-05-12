@@ -11,9 +11,8 @@ jobs:
   eslint:
     runs-on: ubuntu
     steps:
-    - name: eslint
-    - uses: actions/checkout@v1
-    - uses: stefanoeb/eslint-action@1.0.2
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        files: /src
+      - uses: actions/checkout@v1
+      - uses: stefanoeb/eslint-action@1.0.2
+        with:
+          files: src/
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
