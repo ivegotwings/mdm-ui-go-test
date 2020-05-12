@@ -10,15 +10,14 @@ on:
 jobs:
     build:
       runs-on: ubuntu-latest
+      env:
+        working-directory: $GITHUB_WORKSPACE
 
       strategy:
         matrix:
           node-version: [10.x]
 
       steps:
-      - run: cd /github && mkdir workspace
-        env:
-          working-directory: /github/workspace/
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
