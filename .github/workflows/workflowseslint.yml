@@ -16,7 +16,7 @@ jobs:
           node-version: [10.x]
 
       steps:
-      - run: mkdir -p /github/workspace
+      - run: cd /github && mkdir workspace
         env:
           working-directory: /github/workspace/
       - uses: actions/checkout@v1
