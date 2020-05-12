@@ -18,7 +18,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - run: npm install eslint --save && npm install babel-eslint --save && npm install eslint-plugin-html --save
+    - run: npm install eslint --save-dev && npm install babel-eslint --save-dev && npm install eslint-plugin-html --save-dev && npm install eslint-plugin-json@latest --save-dev
       env:
         CI: true
     - uses: stefanoeb/eslint-action@1.0.2
