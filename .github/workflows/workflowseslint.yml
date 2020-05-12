@@ -21,10 +21,7 @@ jobs:
     - run: npm install
       env:
         CI: true
-  eslint:
-    runs-on: ubuntu
-    steps:
-      - uses: stefanoeb/eslint-action@1.0.2
-        with:
-          files: src/
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: stefanoeb/eslint-action@1.0.2
+      with:
+        files: src/
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
