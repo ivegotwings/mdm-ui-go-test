@@ -7,11 +7,23 @@ on:
     branches: [ dev ]
     types: [assigned, opened, synchronize, reopened]
 
-jobs:     
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: npm install
+      env:
+        CI: true
   eslint:
     runs-on: ubuntu
     steps:
-      - uses: actions/checkout@v1
       - uses: stefanoeb/eslint-action@1.0.2
         with:
           files: src/
