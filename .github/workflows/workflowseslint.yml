@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: eslint install
-      - run: npm init -y && npm install eslint --save
+      - run: npm install eslint
       - name: eslint action
       - uses: stefanoeb/eslint-action@1.0.2
         with:
