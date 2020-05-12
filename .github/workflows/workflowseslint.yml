@@ -21,20 +21,11 @@ jobs:
       - uses: actions/checkout@v1
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
+      - name: Eslint
+        uses: stefanoeb/eslint-action@1.0.2
         with:
           node-version: ${{ matrix.node-version }}
-      -  run: pwd && npm init -y
-         working-directory: ${{ env.working-directory }} 
-      -  run: npm install eslint --save-dev
-         working-directory: ${{ env.working-directory }} 
-
-    eslint:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v1
-        - uses: stefanoeb/eslint-action@1.0.2
-          with:
-            repo-token: ${{ secrets.GITHUB_TOKEN }}
-            files: /src
-          env:
-            CI: true
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          files: /src
+        env:
+          CI: true
