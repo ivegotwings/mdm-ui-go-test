@@ -20,8 +20,8 @@ jobs:
         node-version: '12.x'
     - uses: fusion-engineering/setup-git-credentials@v2
       with:
-        credentials: ${{secrets.GIT_CREDENTIALS}} 
-    - uses: actions/checkout@v1         
+        credentials: ${{secrets.GIT_CREDENTIALS}}
+    - uses: actions/checkout@v1
     - run: npm install
       env:
         CI: true
