@@ -26,7 +26,7 @@ jobs:
     - run: npm install
       env:
         CI: true
-    - uses: tinovyatkin/action-eslint@v1
+    - uses: hallee/eslint-action@master
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         check-name: eslint
