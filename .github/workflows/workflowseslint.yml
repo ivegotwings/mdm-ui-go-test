@@ -18,7 +18,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - run: npm install --only=prod eslint eslint-config-standard eslint-plugin-html eslint-plugin-import eslint-plugin-json eslint-plugin-node eslint-plugin-promise eslint-plugin-standard
+    - run: npm install
       env:
         CI: true
     - uses: stefanoeb/eslint-action@1.0.2
