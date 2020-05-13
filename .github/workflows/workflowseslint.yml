@@ -18,6 +18,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
+    - uses: fusion-engineering/setup-git-credentials@v2
+      with:
+        credentials: ${{secrets.GIT_CREDENTIALS}}
+    - uses: actions/checkout@v1
+    - name: Build
+      run: cargo +stable build --color=always
+    - name: Run tests
+      run: cargo +stable test --color=always      
     - run: npm install
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
