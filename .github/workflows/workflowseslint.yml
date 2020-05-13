@@ -22,7 +22,9 @@ jobs:
     - uses: fusion-engineering/setup-git-credentials@v2
       with:
         credentials: ${{secrets.GIT_CREDENTIALS}} 
-    - uses: actions/checkout@v2           
+    - uses: actions/checkout@v2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}           
     - run: npm install
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
