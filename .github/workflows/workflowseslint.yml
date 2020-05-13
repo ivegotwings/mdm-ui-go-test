@@ -8,10 +8,10 @@ on:
     types: [assigned, opened, synchronize, reopened]
 
 jobs:
-  build:
-
+  eslint:
+    
     runs-on: ubuntu-latest
-
+    
     steps:
     - uses: fusion-engineering/setup-git-credentials@v2
       with:
@@ -26,6 +26,7 @@ jobs:
     - run: npm install
       env:
         CI: true
-    - uses: stefanoeb/eslint-action@1.0.2
+    - uses: tinovyatkin/action-eslint@v1
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+        check-name: eslint
