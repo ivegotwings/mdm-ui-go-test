@@ -189,12 +189,7 @@
         "underscore": "^1.9.1",
         "unzipper": "^0.10.10",
         "url": "^0.11.0",
-        "uuid": "^3.3.3",
-        "web-animations-js": "^2.3.2",
-        "wct-browser-legacy": "^1.0.2",
-        "wct-local": "^2.1.5",
-        "wct-mocha": "^1.0.1",
-        "web-component-tester": "^6.9.2"
+        "uuid": "^3.3.3"
     },
     "devDependencies": {
         "@babel/core": "^7.6.4",
@@ -234,6 +229,11 @@
         "terser-webpack-plugin": "^2.2.1",
         "tiny-lr": "^1.1.1",
         "uglify-template-string-loader": "^1.1.1",
+        "web-animations-js": "^2.3.2",
+        "wct-browser-legacy": "^1.0.2",
+        "wct-local": "^2.1.5",
+        "wct-mocha": "^1.0.1",
+        "web-component-tester": "^6.9.2",
         "web-component-analyzer": "github:riversandtechnologies/web-component-analyzer#master",
         "webpack": "^4.41.2",
         "webpack-bundle-analyzer": "^3.6.1",
