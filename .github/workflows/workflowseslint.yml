@@ -18,7 +18,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - run: npm install mkdirp
+    - run: npm install eslint && npm install mkdirp && npm install estraverse
     - run: npm install --only=dev
       env:
         CI: true
